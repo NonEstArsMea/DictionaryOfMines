@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.DictionaryOfMines" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorSecondaryContainer">@color/brown_900</item>
+        <item name="colorSurface">@color/brown_300</item>
+    </style>
+
+    <style name="MainButton" parent="@style/Widget.Material3.Button.IconButton.Outlined">
+        <item name="backgroundTint">@color/col_button_background_color</item>
+        <item name="strokeColor">@color/col_button_background_color</item>
+        <item name="iconTint">@color/white</item>
+    </style>
+
+    <style name="Theme.DictionaryOfMines" parent="Base.Theme.DictionaryOfMines" />
+</resources>
