@@ -21,6 +21,8 @@
         android:layout_height="300dp"
         android:id="@+id/switcher"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/back_button" />
+        android:clickable="true"
+        app:layout_constraintTop_toBottomOf="@id/back_button"
+        android:focusable="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

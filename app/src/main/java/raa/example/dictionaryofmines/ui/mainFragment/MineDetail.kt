@@ -1,17 +1,19 @@
 package raa.example.dictionaryofmines.ui.mainFragment
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.GestureDetector
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.FrameLayout
 import android.widget.ImageSwitcher
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.ViewSwitcher
 import androidx.fragment.app.Fragment
 import raa.example.dictionaryofmines.R
 import raa.example.dictionaryofmines.databinding.FragmentMineDetailBinding
@@ -39,6 +41,20 @@ class MineDetail : Fragment()  {
     private var _binding: FragmentMineDetailBinding? = null
     private val binding get() = _binding!!
 
+    // Set animations
+    private lateinit var inAnimLeft : Animation
+    private lateinit var outAnimLeft : Animation
+    private lateinit var inAnimRight : Animation
+    private lateinit var outAnimRight : Animation
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        inAnimLeft = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left)
+        outAnimRight = AnimationUtils.loadAnimation(context, android.R.anim.slide_out_right)
+        outAnimLeft = AnimationUtils.loadAnimation(context, R.anim.slide_out_left)
+        inAnimRight = AnimationUtils.loadAnimation(context, R.anim.slide_in_right)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -55,30 +71,17 @@ class MineDetail : Fragment()  {
         _binding = FragmentMineDetailBinding.inflate(inflater, container, false)
 
         imageSwitcher = binding.switcher
-        imageSwitcher.setFactory(ViewSwitcher.ViewFactory {
+        imageSwitcher.setFactory {
             val imageView = ImageView(requireContext())
             imageView.scaleType = ImageView.ScaleType.FIT_CENTER
             imageView.layoutParams = FrameLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT
             )
             imageView
-        })
+        }
 
-        gestureDetector = GestureDetector(requireContext(), object : GestureDetector.OnGestureListener, View.OnTouchListener{
-            override fun onDown(e: MotionEvent) = false
 
-            override fun onShowPress(e: MotionEvent){}
-
-            override fun onSingleTapUp(e: MotionEvent) = false
-
-            override fun onScroll(
-                e1: MotionEvent?,
-                e2: MotionEvent,
-                distanceX: Float,
-                distanceY: Float
-            ) = false
-
-            override fun onLongPress(e: MotionEvent) {}
+        gestureDetector = GestureDetector(requireContext(), object : GestureDetector.SimpleOnGestureListener(){
 
             override fun onFling(
                 e1: MotionEvent?,
@@ -86,9 +89,10 @@ class MineDetail : Fragment()  {
                 velocityX: Float,
                 velocityY: Float
             ): Boolean {
+                Log.e("motion", e1.toString())
                 val sensitivity = 50
 
-                if (e1 != null && e2 != null) {
+                if (e1 != null) {
                     if (e1.x - e2.x > sensitivity) {
                         showNextImage()
                     } else if (e2.x - e1.x > sensitivity) {
@@ -97,20 +101,16 @@ class MineDetail : Fragment()  {
                 }
                 return true
             }
-
-            override fun onTouch(v: View?, event: MotionEvent): Boolean {
-                return gestureDetector.onTouchEvent(event)
-            }
-
         })
 
-        // Set animations
-        val inAnim = AnimationUtils.loadAnimation(requireContext(), android.R.anim.slide_in_left)
-        val outAnim = AnimationUtils.loadAnimation(requireContext(), android.R.anim.slide_out_right)
-        imageSwitcher.inAnimation = inAnim
-        imageSwitcher.outAnimation = outAnim
+        imageSwitcher.performClick()
+        imageSwitcher.setOnTouchListener{_, event ->
+            gestureDetector.onTouchEvent(event)
+        }
+
 
         imageSwitcher.setImageResource(images[currentIndex])
+
 
 
         return binding.root
@@ -118,11 +118,15 @@ class MineDetail : Fragment()  {
 
     private fun showNextImage() {
         currentIndex = (currentIndex + 1) % images.size
+        imageSwitcher.inAnimation = inAnimRight
+        imageSwitcher.outAnimation = outAnimLeft
         imageSwitcher.setImageResource(images[currentIndex])
     }
 
     private fun showPreviousImage() {
         currentIndex = if (currentIndex > 0) currentIndex - 1 else images.size - 1
+        imageSwitcher.inAnimation = inAnimLeft
+        imageSwitcher.outAnimation = outAnimRight
         imageSwitcher.setImageResource(images[currentIndex])
     }
 
@@ -154,4 +158,5 @@ class MineDetail : Fragment()  {
                 }
             }
     }
+
 }
