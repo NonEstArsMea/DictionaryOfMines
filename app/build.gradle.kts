@@ -59,4 +59,7 @@ dependencies {
 
     val lifecycle_version = "2.7.0"
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+
+    //get CSV
+    implementation ("org.apache.commons:commons-csv:1.5")
 }

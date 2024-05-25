@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import raa.example.dictionaryofmines.R
+import raa.example.dictionaryofmines.data.Repository
 import raa.example.dictionaryofmines.databinding.FragmentMainBinding
 import java.util.Random
 
@@ -22,12 +23,6 @@ class MainFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val mainParamAdapter = RecycleViewAdapter()
-
-    private val mineList = buildList {
-        (1..10).forEach {
-            this.add(MineDataClass(it, "Мина ${it}${Random().nextInt(100000)}"))
-        }
-    }
 
     private val viewModel: MainFragmentViewModel by viewModels()
 
@@ -45,6 +40,14 @@ class MainFragment : Fragment() {
         val rvAddPerson = binding.recycleView
         rvAddPerson.adapter = mainParamAdapter
         rvAddPerson.layoutManager = LinearLayoutManager(context)
+
+        var names = Repository.getNamesOfCards(requireContext())
+
+        val mineList = buildList {
+            repeat(names.size) {
+                this.add(MineDataClass(it, names[it]))
+            }
+        }
 
         mainParamAdapter.submitList(mineList)
 
@@ -66,6 +69,8 @@ class MainFragment : Fragment() {
             requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.main_fragment_container, MineDetail.newInstance(it.name))
                 .commit()
+
+            Repository.getInfo("", requireContext())
         }
 
     }

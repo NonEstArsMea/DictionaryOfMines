@@ -1,5 +1,6 @@
 package raa.example.dictionaryofmines.ui.mainFragment
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
@@ -21,6 +22,7 @@ import raa.example.dictionaryofmines.databinding.FragmentMineDetailBinding
 
 private const val ARG_PARAM1 = "param1"
 
+@SuppressLint("StaticFieldLeak")
 private lateinit var imageSwitcher: ImageSwitcher
 private lateinit var gestureDetector: GestureDetector
 
@@ -32,20 +34,20 @@ private val images = intArrayOf(
     R.drawable.img3,
     R.drawable.img4,
     R.drawable.img5,
-    )
+)
 
 
-class MineDetail : Fragment()  {
+class MineDetail : Fragment() {
     private var param1: String? = null
 
     private var _binding: FragmentMineDetailBinding? = null
     private val binding get() = _binding!!
 
     // Set animations
-    private lateinit var inAnimLeft : Animation
-    private lateinit var outAnimLeft : Animation
-    private lateinit var inAnimRight : Animation
-    private lateinit var outAnimRight : Animation
+    private lateinit var inAnimLeft: Animation
+    private lateinit var outAnimLeft: Animation
+    private lateinit var inAnimRight: Animation
+    private lateinit var outAnimRight: Animation
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -64,6 +66,7 @@ class MineDetail : Fragment()  {
 
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -81,30 +84,30 @@ class MineDetail : Fragment()  {
         }
 
 
-        gestureDetector = GestureDetector(requireContext(), object : GestureDetector.SimpleOnGestureListener(){
+        gestureDetector =
+            GestureDetector(requireContext(), object : GestureDetector.SimpleOnGestureListener() {
 
-            override fun onFling(
-                e1: MotionEvent?,
-                e2: MotionEvent,
-                velocityX: Float,
-                velocityY: Float
-            ): Boolean {
-                Log.e("motion", e1.toString())
-                val sensitivity = 50
+                override fun onFling(
+                    e1: MotionEvent?,
+                    e2: MotionEvent,
+                    velocityX: Float,
+                    velocityY: Float
+                ): Boolean {
+                    Log.e("motion", e1.toString())
+                    val sensitivity = 50
 
-                if (e1 != null) {
-                    if (e1.x - e2.x > sensitivity) {
-                        showNextImage()
-                    } else if (e2.x - e1.x > sensitivity) {
-                        showPreviousImage()
+                    if (e1 != null) {
+                        if (e1.x - e2.x > sensitivity) {
+                            showNextImage()
+                        } else if (e2.x - e1.x > sensitivity) {
+                            showPreviousImage()
+                        }
                     }
+                    return true
                 }
-                return true
-            }
-        })
+            })
 
-        imageSwitcher.performClick()
-        imageSwitcher.setOnTouchListener{_, event ->
+        imageSwitcher.setOnTouchListener { _, event ->
             gestureDetector.onTouchEvent(event)
         }
 
@@ -146,7 +149,6 @@ class MineDetail : Fragment()  {
             .replace(R.id.main_fragment_container, MainFragment.newInstance())
             .commit()
     }
-
 
 
     companion object {
