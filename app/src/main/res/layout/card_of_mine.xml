@@ -5,10 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
 
-    android:layout_marginLeft="5dp"
-    android:layout_marginRight="5dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="5dp"
+    android:background="@color/backgroundColor"
 
     android:layout_marginBottom="10dp"
+    app:strokeColor="@color/mainColor"
+    app:strokeWidth="3dp"
     style="@style/Widget.Material3.CardView.Outlined"
     android:theme="@style/Base.Theme.DictionaryOfMines">
 
@@ -17,9 +21,10 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingLeft="25dp"
-        android:paddingTop="25dp"
+        android:paddingTop="35dp"
         android:paddingRight="15dp"
-        android:paddingBottom="25dp">
+        android:paddingBottom="35dp"
+        android:background="@color/backgroundColor">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/number_card_view"

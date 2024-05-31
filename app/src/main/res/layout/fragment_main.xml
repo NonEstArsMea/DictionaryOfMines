@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/backgroundColor"
     android:layout_height="match_parent"
     tools:context=".ui.mainFragment.MainFragment">
 
@@ -12,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
+        android:background="@color/backgroundColor"
 
         app:layout_constraintBottom_toBottomOf="parent"
 
@@ -20,17 +22,21 @@
         tools:listitem="@layout/card_of_mine" />
 
     <com.google.android.material.card.MaterialCardView
+        app:strokeColor="@color/mainColor"
+        app:strokeWidth="3dp"
         android:id="@+id/search_veiw_card"
-        style="@style/Widget.Material3.CardView.Filled"
+        style="@style/Widget.Material3.CardView.Outlined"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@color/gray_100"
+        android:layout_margin="15dp"
+        android:background="@color/backgroundColor"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <SearchView
             android:id="@+id/search_veiw"
+            android:background="@color/backgroundColor"
+            android:theme="@style/Search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.card.MaterialCardView>

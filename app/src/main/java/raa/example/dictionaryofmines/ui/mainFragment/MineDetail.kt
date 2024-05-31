@@ -17,6 +17,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import raa.example.dictionaryofmines.R
+import raa.example.dictionaryofmines.data.Repository
 import raa.example.dictionaryofmines.databinding.FragmentMineDetailBinding
 
 
@@ -87,6 +88,8 @@ class MineDetail : Fragment() {
         gestureDetector =
             GestureDetector(requireContext(), object : GestureDetector.SimpleOnGestureListener() {
 
+                override fun onDoubleTap(e: MotionEvent) = showNextImage()
+
                 override fun onFling(
                     e1: MotionEvent?,
                     e2: MotionEvent,
@@ -94,16 +97,16 @@ class MineDetail : Fragment() {
                     velocityY: Float
                 ): Boolean {
                     Log.e("motion", e1.toString())
-                    val sensitivity = 50
+                    val sensitivity = 40
 
                     if (e1 != null) {
                         if (e1.x - e2.x > sensitivity) {
-                            showNextImage()
+                            return showNextImage()
                         } else if (e2.x - e1.x > sensitivity) {
-                            showPreviousImage()
+                            return showPreviousImage()
                         }
                     }
-                    return true
+                    return false
                 }
             })
 
@@ -112,27 +115,37 @@ class MineDetail : Fragment() {
         }
 
 
+
         imageSwitcher.setImageResource(images[currentIndex])
 
 
+        bindingInfo()
 
         return binding.root
     }
 
-    private fun showNextImage() {
+    private fun showNextImage(): Boolean {
         currentIndex = (currentIndex + 1) % images.size
         imageSwitcher.inAnimation = inAnimRight
         imageSwitcher.outAnimation = outAnimLeft
         imageSwitcher.setImageResource(images[currentIndex])
+        return true
     }
 
-    private fun showPreviousImage() {
+    private fun showPreviousImage(): Boolean {
         currentIndex = if (currentIndex > 0) currentIndex - 1 else images.size - 1
         imageSwitcher.inAnimation = inAnimLeft
         imageSwitcher.outAnimation = outAnimRight
         imageSwitcher.setImageResource(images[currentIndex])
+        return true
     }
 
+    private fun bindingInfo(){
+        val mine = Repository.getInfo(param1!!, requireContext())
+
+        binding.name.text = mine.name
+        binding.information.text = mine.information
+    }
 
     override fun onStart() {
         super.onStart()

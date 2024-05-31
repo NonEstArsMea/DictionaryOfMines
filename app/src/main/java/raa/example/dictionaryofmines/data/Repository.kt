@@ -8,10 +8,11 @@ import org.apache.commons.csv.CSVParser
 object Repository {
 
 
-    fun getInfo(id: String, context: Context) {
+    fun getInfo(id: String, context: Context): MineClass {
 
         val filename = "db.txt"
         val assetManager = context.assets
+
 
         val fileContent = assetManager.open(filename).bufferedReader().readText()
 
@@ -22,7 +23,20 @@ object Repository {
                 .withTrim()
                 .withDelimiter(';')
         )
+
+        for (line in csvParser){
+            if(id == line.get(1)){
+                return MineClass(
+                    param = line.get(0),
+                    name = line.get(1),
+                    information = line.get(2)
+                )
+            }
+
+
+        }
         Log.e("tab", fileContent.toString())
+        return MineClass.returnEmpty()
     }
 
     fun getNamesOfCards(context: Context): List<String>{

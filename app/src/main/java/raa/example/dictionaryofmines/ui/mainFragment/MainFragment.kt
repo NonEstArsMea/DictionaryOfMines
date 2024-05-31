@@ -69,8 +69,6 @@ class MainFragment : Fragment() {
             requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.main_fragment_container, MineDetail.newInstance(it.name))
                 .commit()
-
-            Repository.getInfo("", requireContext())
         }
 
     }

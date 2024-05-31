@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "raa.example.dictionaryofmines"
-        minSdk = 24
+        minSdk = 28
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -48,6 +48,7 @@ dependencies {
     implementation(libs.legacy.support.v4)
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.fragment.ktx)
+    implementation(libs.car.ui.lib)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

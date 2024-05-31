@@ -5,8 +5,12 @@
     <color name="brown_900">#004D40</color>
     <color name="brown_300">#869895</color>
     <color name="col_background_color">#27282a</color>
+    <color name="gray_500">#808080</color>
     <color name="gray_300">#3A3A3A</color>
     <color name="gray_100">#AAAAAA</color>
 
-    <color name="col_button_background_color">#004D40</color>
+    <color name="backgroundColor">#313131</color>
+    <color name="mainColor">#a7efaf</color>
+
+    <color name="col_button_background_color">#a7efaf</color>
 </resources>
