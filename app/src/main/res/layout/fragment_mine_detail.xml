@@ -33,17 +33,13 @@
                 android:focusable="true" />
 
             <LinearLayout
+                android:paddingTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="5dp">
 
                     <TextView
                         android:id="@+id/name"
@@ -53,7 +49,6 @@
                         android:textColor="@color/mainColor"
                         android:textSize="32sp"
                         android:textStyle="bold" />
-                </LinearLayout>
 
                 <TextView
                     android:id="@+id/information"
@@ -70,6 +65,408 @@
                     android:layout_marginBottom="15dp"
                     android:layout_height="2dp"/>
 
+                <TextView
+                    android:id="@+id/body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="--aa--aa--"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+                <TextView
+                    android:id="@+id/mass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="--aa--aa--"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+                <TextView
+                    android:id="@+id/type_b_b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="--aa--aa--"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/massa_b_b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="--aa--aa--"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/segment_radius"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="--aa--aa--"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/segment_angle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="--aa--aa--"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/mine_height"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="--aa--aa--"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/type_of_target_sensors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="--aa--aa--"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/length_of_the_target_tension_sensor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="--aa--aa--"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/the_actuation_force_of_the_target_tension_sensor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="--aa--aa--"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/the_time_of_bringing_the_combat_position"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The_time_of_bringing_the_combat_position"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/the_height_of_the_splinter_spread"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The_time_of_bringing_the_combat_position"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/the_radius_of_defeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The_time_of_bringing_the_combat_position"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/the_radius_of_separation_of_individual_fragments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The_time_of_bringing_the_combat_position"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/recoverability"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The_time_of_bringing_the_combat_position"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/decontamination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The_time_of_bringing_the_combat_position"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/selfdestruction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The_time_of_bringing_the_combat_position"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/diameter_mine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The_time_of_bringing_the_combat_position"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/diameter_of_the_pressure_sensor_of_the_target"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The_time_of_bringing_the_combat_position"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/combat_operation_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The_time_of_bringing_the_combat_position"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/temperatura"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The_time_of_bringing_the_combat_position"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/vzrivatel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The_time_of_bringing_the_combat_position"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/dlina_mine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The_time_of_bringing_the_combat_position"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/tolshina_mine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The_time_of_bringing_the_combat_position"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/broneboynost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The_time_of_bringing_the_combat_position"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/the_radius_of_the_target_detection_range"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The_time_of_bringing_the_combat_position"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
+
+                <TextView
+                    android:id="@+id/non_involvement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The_time_of_bringing_the_combat_position"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    app:dividerColor="@color/gray_500"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="2dp"/>
 
             </LinearLayout>
         </LinearLayout>

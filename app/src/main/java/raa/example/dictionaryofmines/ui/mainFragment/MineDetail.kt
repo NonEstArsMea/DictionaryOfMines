@@ -145,6 +145,33 @@ class MineDetail : Fragment() {
 
         binding.name.text = mine.name
         binding.information.text = mine.information
+        binding.body.text = ("Материал - ${mine.body}" )
+        binding.mass.text = ("Масса мины - ${mine.mass}" )
+        binding.typeBB.text = ("Тип взрывчатого вещества - ${mine.type_ВВ}" )
+        binding.massaBB.text = ("Масса взрывчатого вещества - ${mine.massa_BB}" )
+        binding.segmentRadius.text = ("Радиус сегмента - ${mine.segment_radius}" )
+        binding.segmentAngle.text = ("Угол сегмента - ${mine.segment_angle}" )
+        binding.mineHeight.text = ("Высота мины - ${mine.mine_height}" )
+        binding.typeOfTargetSensors.text = ("Тип датчиков цели - ${mine.Type_of_target_sensors}")
+        binding.lengthOfTheTargetTensionSensor.text = ("Усилие срабатывания натяжного датчика цели - ${mine.Length_of_the_target_tension_sensor}")
+        binding.theActuationForceOfTheTargetTensionSensor.text = ("Усилие срабатывания натяжного датчика цели - ${mine.The_actuation_force_of_the_target_tension_sensor}")
+        binding.theTimeOfBringingTheCombatPosition.text = ("Тип датчиков цели - ${mine.The_time_of_bringing_the_combat_position}")
+        binding.theHeightOfTheSplinterSpread.text = ("Тип датчиков цели - ${mine.The_height_of_the_splinter_spread}")
+        binding.theRadiusOfDefeat.text = ("Тип датчиков цели - ${mine.The_radius_of_defeat}")
+        binding.theRadiusOfSeparationOfIndividualFragments.text = ("Тип датчиков цели - ${mine.The_radius_of_separation_of_individual_fragments}")
+        binding.recoverability.text = ("Тип датчиков цели - ${mine.Recoverability}")
+        binding.decontamination.text = ("Тип датчиков цели - ${mine.Decontamination}")
+        binding.selfdestruction.text = ("Тип датчиков цели - ${mine.Selfdestruction}")
+        binding.diameterMine.text = ("Тип датчиков цели - ${mine.Diameter_mine}")
+        binding.diameterOfThePressureSensorOfTheTarget.text = ("Тип датчиков цели - ${mine.Diameter_of_the_pressure_sensor_of_the_target}")
+        binding.combatOperationTime.text = ("Тип датчиков цели - ${mine.Combat_operation_time}")
+        binding.temperatura.text = ("Тип датчиков цели - ${mine.Temperatura}")
+        binding.vzrivatel.text = ("Тип датчиков цели - ${mine.Vzrivatel}")
+        binding.dlinaMine.text = ("Тип датчиков цели - ${mine.Dlina_mine}")
+        binding.tolshinaMine.text = ("Тип датчиков цели - ${mine.tolshina_mine}")
+        binding.broneboynost.text = ("Тип датчиков цели - ${mine.broneboynost}")
+        binding.theRadiusOfTheTargetDetectionRange.text = ("Тип датчиков цели - ${mine.The_radius_of_the_target_detection_range}")
+        binding.nonInvolvement.text = ("Тип датчиков цели - ${mine.non_involvement}")
     }
 
     override fun onStart() {
