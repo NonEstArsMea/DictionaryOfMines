@@ -15,6 +15,7 @@ import android.widget.FrameLayout
 import android.widget.ImageSwitcher
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import raa.example.dictionaryofmines.R
 import raa.example.dictionaryofmines.data.Repository
@@ -140,38 +141,238 @@ class MineDetail : Fragment() {
         return true
     }
 
-    private fun bindingInfo(){
+    private fun bindingInfo() {
         val mine = Repository.getInfo(param1!!, requireContext())
 
         binding.name.text = mine.name
         binding.information.text = mine.information
-        binding.body.text = ("Материал - ${mine.body}" )
-        binding.mass.text = ("Масса мины - ${mine.mass}" )
-        binding.typeBB.text = ("Тип взрывчатого вещества - ${mine.type_ВВ}" )
-        binding.massaBB.text = ("Масса взрывчатого вещества - ${mine.massa_BB}" )
-        binding.segmentRadius.text = ("Радиус сегмента - ${mine.segment_radius}" )
-        binding.segmentAngle.text = ("Угол сегмента - ${mine.segment_angle}" )
-        binding.mineHeight.text = ("Высота мины - ${mine.mine_height}" )
-        binding.typeOfTargetSensors.text = ("Тип датчиков цели - ${mine.Type_of_target_sensors}")
-        binding.lengthOfTheTargetTensionSensor.text = ("Усилие срабатывания натяжного датчика цели - ${mine.Length_of_the_target_tension_sensor}")
-        binding.theActuationForceOfTheTargetTensionSensor.text = ("Усилие срабатывания натяжного датчика цели - ${mine.The_actuation_force_of_the_target_tension_sensor}")
-        binding.theTimeOfBringingTheCombatPosition.text = ("Тип датчиков цели - ${mine.The_time_of_bringing_the_combat_position}")
-        binding.theHeightOfTheSplinterSpread.text = ("Тип датчиков цели - ${mine.The_height_of_the_splinter_spread}")
-        binding.theRadiusOfDefeat.text = ("Тип датчиков цели - ${mine.The_radius_of_defeat}")
-        binding.theRadiusOfSeparationOfIndividualFragments.text = ("Тип датчиков цели - ${mine.The_radius_of_separation_of_individual_fragments}")
-        binding.recoverability.text = ("Тип датчиков цели - ${mine.Recoverability}")
-        binding.decontamination.text = ("Тип датчиков цели - ${mine.Decontamination}")
-        binding.selfdestruction.text = ("Тип датчиков цели - ${mine.Selfdestruction}")
-        binding.diameterMine.text = ("Тип датчиков цели - ${mine.Diameter_mine}")
-        binding.diameterOfThePressureSensorOfTheTarget.text = ("Тип датчиков цели - ${mine.Diameter_of_the_pressure_sensor_of_the_target}")
-        binding.combatOperationTime.text = ("Тип датчиков цели - ${mine.Combat_operation_time}")
-        binding.temperatura.text = ("Тип датчиков цели - ${mine.Temperatura}")
-        binding.vzrivatel.text = ("Тип датчиков цели - ${mine.Vzrivatel}")
-        binding.dlinaMine.text = ("Тип датчиков цели - ${mine.Dlina_mine}")
-        binding.tolshinaMine.text = ("Тип датчиков цели - ${mine.tolshina_mine}")
-        binding.broneboynost.text = ("Тип датчиков цели - ${mine.broneboynost}")
-        binding.theRadiusOfTheTargetDetectionRange.text = ("Тип датчиков цели - ${mine.The_radius_of_the_target_detection_range}")
-        binding.nonInvolvement.text = ("Тип датчиков цели - ${mine.non_involvement}")
+        mine.body.apply {
+            if (this != "") {
+                binding.body.text = ("Материал - ${this}")
+                binding.body.isVisible = true
+                binding.divider1.isVisible = true
+            }
+        }
+
+        mine.mass.apply {
+            if (this != "") {
+                binding.mass.text = ("Масса мины - ${mine.mass}")
+                binding.mass.isVisible = true
+                binding.divider2.isVisible = true
+            }
+        }
+
+        mine.type_ВВ.apply {
+            if (this != "") {
+                binding.typeBB.text = ("Тип взрывчатого вещества - ${mine.type_ВВ}")
+                binding.typeBB.isVisible = true
+                binding.divider3.isVisible = true
+            }
+        }
+
+        mine.massa_BB.apply {
+            if (this != "") {
+                binding.massaBB.text = ("Масса взрывчатого вещества - ${mine.massa_BB}")
+                binding.massaBB.isVisible = true
+                binding.divider4.isVisible = true
+            }
+        }
+
+        mine.segment_radius.apply {
+            if (this != "") {
+                binding.segmentRadius.text = ("Радиус сегмента - ${mine.segment_radius}")
+                binding.segmentRadius.isVisible = true
+                binding.divider5.isVisible = true
+            }
+        }
+
+        mine.segment_angle.apply {
+            if (this != "") {
+                binding.segmentAngle.text = ("Угол сегмента - ${mine.segment_angle}")
+                binding.segmentAngle.isVisible = true
+                binding.divider6.isVisible = true
+            }
+        }
+
+        mine.mine_height.apply {
+            if (this != "") {
+                binding.mineHeight.text = ("Высота мины - ${mine.mine_height}")
+                binding.mineHeight.isVisible = true
+                binding.divider7.isVisible = true
+            }
+        }
+
+        mine.Type_of_target_sensors.apply {
+            if (this != "") {
+                binding.typeOfTargetSensors.text =
+                    ("Тип датчиков цели - ${mine.Type_of_target_sensors}")
+                binding.typeOfTargetSensors.isVisible = true
+                binding.divider8.isVisible = true
+            }
+        }
+
+        mine.Length_of_the_target_tension_sensor.apply {
+            if (this != "") {
+                binding.lengthOfTheTargetTensionSensor.text =
+                    ("Длина натяжного датчика цели - ${mine.Length_of_the_target_tension_sensor}")
+                binding.lengthOfTheTargetTensionSensor.isVisible = true
+                binding.divider9.isVisible = true
+            }
+        }
+
+        mine.The_actuation_force_of_the_target_tension_sensor.apply {
+            if (this != "") {
+                binding.theActuationForceOfTheTargetTensionSensor.text =
+                    ("Усилие срабатывания натяжного датчика цели - ${mine.The_actuation_force_of_the_target_tension_sensor}")
+                binding.theActuationForceOfTheTargetTensionSensor.isVisible = true
+                binding.divider10.isVisible = true
+            }
+        }
+
+        mine.The_time_of_bringing_the_combat_position.apply {
+            if (this != "") {
+                binding.theTimeOfBringingTheCombatPosition.text =
+                    ("Время приведения боевого положения - ${mine.The_time_of_bringing_the_combat_position}")
+                binding.theTimeOfBringingTheCombatPosition.isVisible = true
+                binding.divider11.isVisible = true
+            }
+        }
+
+        mine.The_height_of_the_splinter_spread.apply {
+            if (this != "") {
+                binding.theHeightOfTheSplinterSpread.text =
+                    ("Высота разлета осколков - ${mine.The_height_of_the_splinter_spread}")
+                binding.theHeightOfTheSplinterSpread.isVisible = true
+                binding.divider12.isVisible = true
+            }
+        }
+
+        mine.The_radius_of_defeat.apply {
+            if (this != "") {
+                binding.theRadiusOfDefeat.text = ("Радиус поражения - ${mine.The_radius_of_defeat}")
+                binding.theRadiusOfDefeat.isVisible = true
+                binding.divider13.isVisible = true
+            }
+        }
+
+        mine.The_radius_of_separation_of_individual_fragments.apply {
+            if (this != "") {
+                binding.theRadiusOfSeparationOfIndividualFragments.text =
+                    ("Радиус отдельных осколков - ${mine.The_radius_of_separation_of_individual_fragments}")
+                binding.theRadiusOfSeparationOfIndividualFragments.isVisible = true
+                binding.divider14.isVisible = true
+            }
+        }
+
+        mine.Recoverability.apply {
+            if (this != "") {
+                binding.recoverability.text = ("Элемент извлекаемости - ${mine.Recoverability}")
+                binding.recoverability.isVisible = true
+                binding.divider15.isVisible = true
+            }
+        }
+
+        mine.Decontamination.apply {
+            if (this != "") {
+                binding.decontamination.text =
+                    ("Элемент обезвреживаемости - ${mine.Decontamination}")
+                binding.decontamination.isVisible = true
+                binding.divider16.isVisible = true
+            }
+        }
+
+        mine.Selfdestruction.apply {
+            if (this != "") {
+                binding.selfdestruction.text = ("Элемент самоликвидации - ${mine.Selfdestruction}")
+                binding.selfdestruction.isVisible = true
+                binding.divider17.isVisible = true
+            }
+        }
+
+        mine.Diameter_mine.apply {
+            if (this != "") {
+                binding.diameterMine.text = ("Диаметр мины - ${mine.Diameter_mine}")
+                binding.diameterMine.isVisible = true
+                binding.divider18.isVisible = true
+            }
+        }
+
+        mine.Diameter_of_the_pressure_sensor_of_the_target.apply {
+            if (this != "") {
+                binding.diameterOfThePressureSensorOfTheTarget.text =
+                    ("Диаметр нажимного датчика цели - ${mine.Diameter_of_the_pressure_sensor_of_the_target}")
+                binding.diameterOfThePressureSensorOfTheTarget.isVisible = true
+                binding.divider19.isVisible = true
+            }
+        }
+
+        mine.Combat_operation_time.apply {
+            if (this != "") {
+                binding.combatOperationTime.text =
+                    ("Время боевой работы - ${mine.Combat_operation_time}")
+                binding.combatOperationTime.isVisible = true
+                binding.divider20.isVisible = true
+            }
+        }
+
+        mine.Temperatura.apply {
+            if (this != "") {
+                binding.temperatura.text = ("Температурный диапазон - ${mine.Temperatura}")
+                binding.temperatura.isVisible = true
+                binding.divider21.isVisible = true
+            }
+        }
+
+        mine.Vzrivatel.apply {
+            if (this != "") {
+                binding.vzrivatel.text = ("Основной взрыватель - ${mine.Vzrivatel}")
+                binding.vzrivatel.isVisible = true
+                binding.divider22.isVisible = true
+            }
+        }
+
+        mine.Dlina_mine.apply {
+            if (this != "") {
+                binding.dlinaMine.text = ("Длина мины - ${mine.Dlina_mine}")
+                binding.dlinaMine.isVisible = true
+                binding.divider23.isVisible = true
+            }
+        }
+
+        mine.tolshina_mine.apply {
+            if (this != "") {
+                binding.tolshinaMine.text = ("Толщина мины - ${mine.tolshina_mine}")
+                binding.tolshinaMine.isVisible = true
+                binding.divider24.isVisible = true
+            }
+        }
+
+        mine.broneboynost.apply {
+            if (this != "") {
+                binding.broneboynost.text = ("Бронебойность - ${mine.broneboynost}")
+                binding.broneboynost.isVisible = true
+                binding.divider25.isVisible = true
+            }
+        }
+
+        mine.The_radius_of_the_target_detection_range.apply {
+            if (this != "") {
+                binding.theRadiusOfTheTargetDetectionRange.text =
+                    ("Радиус дальности обнаружения цели - ${mine.The_radius_of_the_target_detection_range}")
+                binding.theRadiusOfTheTargetDetectionRange.isVisible = true
+                binding.divider26.isVisible = true
+            }
+        }
+
+        mine.non_involvement.apply {
+            if (this != "") {
+                binding.nonInvolvement.text =
+                    ("Возможность обезвреживания - ${mine.non_involvement}")
+                binding.nonInvolvement.isVisible = true
+                binding.divider27.isVisible = true
+            }
+        }
+
     }
 
     override fun onStart() {

@@ -33,22 +33,22 @@
                 android:focusable="true" />
 
             <LinearLayout
-                android:paddingTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:paddingLeft="10dp"
+                android:paddingTop="15dp"
                 android:paddingRight="10dp">
 
 
-                    <TextView
-                        android:id="@+id/name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Название  "
-                        android:textColor="@color/mainColor"
-                        android:textSize="32sp"
-                        android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Название  "
+                    android:textColor="@color/mainColor"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/information"
@@ -59,11 +59,13 @@
                     android:textSize="17sp" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_1"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/body"
@@ -71,42 +73,53 @@
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_2"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
+
                 <TextView
                     android:id="@+id/mass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_3"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
+
                 <TextView
                     android:id="@+id/type_b_b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_4"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/massa_b_b"
@@ -114,14 +127,17 @@
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_5"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/segment_radius"
@@ -129,14 +145,17 @@
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_6"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/segment_angle"
@@ -144,14 +163,17 @@
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_7"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/mine_height"
@@ -159,14 +181,17 @@
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_8"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/type_of_target_sensors"
@@ -174,14 +199,17 @@
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_9"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/length_of_the_target_tension_sensor"
@@ -189,14 +217,17 @@
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_10"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/the_actuation_force_of_the_target_tension_sensor"
@@ -204,14 +235,17 @@
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_11"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/the_time_of_bringing_the_combat_position"
@@ -219,14 +253,17 @@
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_12"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/the_height_of_the_splinter_spread"
@@ -234,14 +271,17 @@
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_13"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/the_radius_of_defeat"
@@ -249,14 +289,17 @@
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_14"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/the_radius_of_separation_of_individual_fragments"
@@ -264,14 +307,17 @@
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_15"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/recoverability"
@@ -279,14 +325,17 @@
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_16"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/decontamination"
@@ -294,14 +343,17 @@
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_17"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/selfdestruction"
@@ -309,14 +361,17 @@
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_18"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/diameter_mine"
@@ -324,14 +379,17 @@
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_19"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/diameter_of_the_pressure_sensor_of_the_target"
@@ -339,14 +397,17 @@
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_20"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/combat_operation_time"
@@ -354,14 +415,17 @@
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_21"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/temperatura"
@@ -369,14 +433,17 @@
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_22"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/vzrivatel"
@@ -384,14 +451,17 @@
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_23"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/dlina_mine"
@@ -399,14 +469,17 @@
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_24"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/tolshina_mine"
@@ -414,14 +487,17 @@
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_25"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/broneboynost"
@@ -429,14 +505,17 @@
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_26"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/the_radius_of_the_target_detection_range"
@@ -444,14 +523,17 @@
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider_27"
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="2dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    android:visibility="gone"
+                    app:dividerColor="@color/gray_500" />
 
                 <TextView
                     android:id="@+id/non_involvement"
@@ -459,14 +541,17 @@
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.divider.MaterialDivider
                     android:layout_width="match_parent"
-                    app:dividerColor="@color/gray_500"
+                    android:layout_height="0dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_height="2dp"/>
+                    app:dividerColor="@color/gray_500"
+                    app:dividerThickness="0dp" />
+
 
             </LinearLayout>
         </LinearLayout>
