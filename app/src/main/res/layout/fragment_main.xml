@@ -3,27 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/backgroundColor"
     android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
     tools:context=".ui.mainFragment.MainFragment">
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycle_view"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="5dp"
-        android:background="@color/backgroundColor"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_veiw_card"
-        tools:listitem="@layout/card_of_mine" />
-
     <com.google.android.material.card.MaterialCardView
-        app:strokeColor="@color/mainColor"
-        app:strokeWidth="3dp"
         android:id="@+id/search_veiw_card"
         style="@style/Widget.Material3.CardView.Outlined"
         android:layout_width="match_parent"
@@ -31,15 +15,84 @@
         android:layout_margin="15dp"
         android:background="@color/backgroundColor"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/mainColor"
+        app:strokeWidth="3dp">
 
         <SearchView
             android:id="@+id/search_veiw"
-            android:background="@color/backgroundColor"
-            android:theme="@style/Search"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundColor"
+            android:theme="@style/Search" />
     </com.google.android.material.card.MaterialCardView>
 
+    <Button
+        android:id="@+id/filter_icon"
+        style="@style/Widget.Material3.Button.IconButton.Outlined"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:icon="@drawable/arrow_down"
+        app:iconTint="?attr/colorAccent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_veiw_card" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:text="Фильтры"
+        android:textSize="16sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/filter_icon"
+        app:layout_constraintLeft_toRightOf="@+id/filter_icon"
+        app:layout_constraintTop_toTopOf="@id/filter_icon" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/filter_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:padding="15dp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filter_icon">
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundColor"
+            android:orientation="vertical"
+            android:padding="15dp">
+            <!-- Здесь будут ваши фильтры -->
+            <CheckBox
+                android:id="@+id/filter_option_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option 1" />
+
+            <CheckBox
+                android:id="@+id/filter_option_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option 2" />
+
+            <!-- Добавьте здесь больше элементов для фильтров по необходимости -->
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filter_layout"
+        tools:listitem="@layout/card_of_mine" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
