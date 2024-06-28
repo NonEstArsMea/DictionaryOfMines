@@ -1,6 +1,7 @@
 package raa.example.dictionaryofmines.ui.mainFragment
 
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -17,12 +18,15 @@ import android.widget.FrameLayout
 import android.widget.ImageSwitcher
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.core.graphics.drawable.toDrawable
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import raa.example.dictionaryofmines.R
+import raa.example.dictionaryofmines.ZoomImageView
 import raa.example.dictionaryofmines.data.Repository
 import raa.example.dictionaryofmines.databinding.FragmentMineDetailBinding
+import java.io.IOException
 
 
 private const val ARG_PARAM1 = "param1"
@@ -31,7 +35,7 @@ private const val ARG_PARAM1 = "param1"
 private lateinit var imageSwitcher: ImageSwitcher
 private lateinit var gestureDetector: GestureDetector
 
-private var currentIndex = 0
+private var currentIndex: Int = 0
 
 private var images = listOf<String>()
 
@@ -86,6 +90,12 @@ class MineDetail : Fragment() {
         gestureDetector =
             GestureDetector(requireContext(), object : GestureDetector.SimpleOnGestureListener() {
 
+                override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
+
+                    showFullScreenImage(images[currentIndex])
+                    return true
+                }
+
                 override fun onDoubleTap(e: MotionEvent) = showNextImage()
 
                 override fun onFling(
@@ -108,18 +118,25 @@ class MineDetail : Fragment() {
                 }
             })
 
+
+        bindImages()
+
         imageSwitcher.setOnTouchListener { _, event ->
             gestureDetector.onTouchEvent(event)
         }
 
-        bindImages()
-        imageSwitcher.setImageDrawable(getBitmapFromAssets(images[currentIndex]).toDrawable(resources))
+        Log.e("images", images.toString() + currentIndex.toString())
+        if(images.isNotEmpty()){
+            imageSwitcher.setImageDrawable(getBitmapFromAssets(images[currentIndex]).toDrawable(resources))
+        }
+
         bindingInfo()
 
         return binding.root
     }
 
     private fun bindImages() {
+        currentIndex = 0
         images = Repository.getImage(requireContext(), param1!!)
     }
 
@@ -127,7 +144,9 @@ class MineDetail : Fragment() {
         currentIndex = (currentIndex + 1) % images.size
         imageSwitcher.inAnimation = inAnimRight
         imageSwitcher.outAnimation = outAnimLeft
-        imageSwitcher.setImageDrawable(getBitmapFromAssets(images[currentIndex]).toDrawable(resources))
+        if(images.isNotEmpty()){
+            imageSwitcher.setImageDrawable(getBitmapFromAssets(images[currentIndex]).toDrawable(resources))
+        }
         return true
     }
 
@@ -135,7 +154,9 @@ class MineDetail : Fragment() {
         currentIndex = if (currentIndex > 0) currentIndex - 1 else images.size - 1
         imageSwitcher.inAnimation = inAnimLeft
         imageSwitcher.outAnimation = outAnimRight
-        imageSwitcher.setImageDrawable(getBitmapFromAssets(images[currentIndex]).toDrawable(resources))
+        if(images.isNotEmpty()){
+            imageSwitcher.setImageDrawable(getBitmapFromAssets(images[currentIndex]).toDrawable(resources))
+        }
         return true
     }
 
@@ -390,11 +411,36 @@ class MineDetail : Fragment() {
             .commit()
     }
 
-    fun getBitmapFromAssets(fileName: String): Bitmap {
-        val assetManager = requireContext().assets
-        val inputStream = assetManager.open(fileName)
-        return BitmapFactory.decodeStream(inputStream)
+    private fun getBitmapFromAssets(fileName: String): Bitmap {
+        if (isAssetFileExists(requireContext(),fileName)){
+            val inputStream = requireContext().assets.open(fileName)
+            return BitmapFactory.decodeStream(inputStream)
+        }
+        return Bitmap.createBitmap(1,1, Bitmap.Config.ALPHA_8, true)
     }
+
+    private fun isAssetFileExists(context: Context, fileName: String): Boolean {
+        return try {
+            context.assets.open(fileName).close()
+            true
+        } catch (e: IOException) {
+            false
+        }
+    }
+
+    private fun showFullScreenImage(fileName: String) {
+        val bitmap = getBitmapFromAssets(fileName)
+        if (bitmap != null) {
+            val dialog = Dialog(requireContext(), android.R.style.Theme_Black_NoTitleBar_Fullscreen)
+            dialog.setContentView(R.layout.dialog_fullscreen_image)
+            val imageView: ZoomImageView = dialog.findViewById(R.id.imageView)
+            imageView.setImageBitmap(bitmap)
+            dialog.show()
+        } else {
+            Toast.makeText(requireContext(), "Image not found in assets", Toast.LENGTH_SHORT).show()
+        }
+    }
+
 
     companion object {
 

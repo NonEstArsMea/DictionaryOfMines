@@ -81,8 +81,8 @@ object Repository {
 
         for (line in csvParser){
             name = line.get(1)
-
-            listOfNames.add(name)
+            if(name.isNotBlank())
+                listOfNames.add(name)
         }
 
         return listOfNames.toList()
@@ -102,10 +102,6 @@ object Repository {
                 .withTrim()
                 .withDelimiter(';')
         )
-
-        val listOfNames = arrayListOf<String>()
-
-        var name: String
 
         for (line in csvParser){
             if(id == line.get(1)){
