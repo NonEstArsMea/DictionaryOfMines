@@ -2,6 +2,8 @@ package raa.example.dictionaryofmines.ui.mainFragment
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
 import android.view.GestureDetector
@@ -15,6 +17,7 @@ import android.widget.FrameLayout
 import android.widget.ImageSwitcher
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.core.graphics.drawable.toDrawable
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import raa.example.dictionaryofmines.R
@@ -30,13 +33,7 @@ private lateinit var gestureDetector: GestureDetector
 
 private var currentIndex = 0
 
-private val images = intArrayOf(
-    R.drawable.img1,
-    R.drawable.img2,
-    R.drawable.img3,
-    R.drawable.img4,
-    R.drawable.img5,
-)
+private var images = listOf<String>()
 
 
 class MineDetail : Fragment() {
@@ -115,21 +112,22 @@ class MineDetail : Fragment() {
             gestureDetector.onTouchEvent(event)
         }
 
-
-
-        imageSwitcher.setImageResource(images[currentIndex])
-
-
+        bindImages()
+        imageSwitcher.setImageDrawable(getBitmapFromAssets(images[currentIndex]).toDrawable(resources))
         bindingInfo()
 
         return binding.root
+    }
+
+    private fun bindImages() {
+        images = Repository.getImage(requireContext(), param1!!)
     }
 
     private fun showNextImage(): Boolean {
         currentIndex = (currentIndex + 1) % images.size
         imageSwitcher.inAnimation = inAnimRight
         imageSwitcher.outAnimation = outAnimLeft
-        imageSwitcher.setImageResource(images[currentIndex])
+        imageSwitcher.setImageDrawable(getBitmapFromAssets(images[currentIndex]).toDrawable(resources))
         return true
     }
 
@@ -137,10 +135,11 @@ class MineDetail : Fragment() {
         currentIndex = if (currentIndex > 0) currentIndex - 1 else images.size - 1
         imageSwitcher.inAnimation = inAnimLeft
         imageSwitcher.outAnimation = outAnimRight
-        imageSwitcher.setImageResource(images[currentIndex])
+        imageSwitcher.setImageDrawable(getBitmapFromAssets(images[currentIndex]).toDrawable(resources))
         return true
     }
 
+    @SuppressLint("SetTextI18n")
     private fun bindingInfo() {
         val mine = Repository.getInfo(param1!!, requireContext())
 
@@ -391,6 +390,11 @@ class MineDetail : Fragment() {
             .commit()
     }
 
+    fun getBitmapFromAssets(fileName: String): Bitmap {
+        val assetManager = requireContext().assets
+        val inputStream = assetManager.open(fileName)
+        return BitmapFactory.decodeStream(inputStream)
+    }
 
     companion object {
 

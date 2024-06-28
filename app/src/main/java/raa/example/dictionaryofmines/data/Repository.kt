@@ -94,4 +94,30 @@ object Repository {
         return assetManager.open(filename).bufferedReader().readText()
     }
 
+    fun getImage(context: Context, id: String): List<String> {
+        val csvParser = CSVParser(
+            getFile(context).reader(), CSVFormat.DEFAULT
+                .withFirstRecordAsHeader()
+                .withIgnoreHeaderCase()
+                .withTrim()
+                .withDelimiter(';')
+        )
+
+        val listOfNames = arrayListOf<String>()
+
+        var name: String
+
+        for (line in csvParser){
+            if(id == line.get(1)){
+                return line.get(30).split("\n")
+                    .map { it.trim() }
+                    .filter { it.isNotEmpty() }
+            }
+
+
+        }
+
+        return arrayListOf()
+    }
+
 }
