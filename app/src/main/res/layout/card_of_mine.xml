@@ -24,7 +24,7 @@
         android:paddingTop="35dp"
         android:paddingRight="15dp"
         android:paddingBottom="35dp"
-        android:background="@color/backgroundColor">
+        >
 
         <androidx.cardview.widget.CardView
             android:id="@+id/number_card_view"

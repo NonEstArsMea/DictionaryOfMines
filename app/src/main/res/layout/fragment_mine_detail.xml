@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
+    android:background="?attr/colorPrimary"
     android:orientation="vertical"
     android:padding="5dp"
     tools:context=".ui.mainFragment.MineDetail">
@@ -55,7 +55,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp" />
 
                 <com.google.android.material.divider.MaterialDivider
@@ -72,7 +72,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -90,7 +90,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -108,7 +108,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -126,7 +126,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -144,7 +144,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -162,7 +162,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -180,7 +180,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -198,7 +198,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -216,7 +216,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -234,7 +234,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="--aa--aa--"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -252,7 +252,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -270,7 +270,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -288,7 +288,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -306,7 +306,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -324,7 +324,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -342,7 +342,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -360,7 +360,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -378,7 +378,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -396,7 +396,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -414,7 +414,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -432,7 +432,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -450,7 +450,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -468,7 +468,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -486,7 +486,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -504,7 +504,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -522,7 +522,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 
@@ -540,7 +540,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="The_time_of_bringing_the_combat_position"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="17sp"
                     android:visibility="gone" />
 

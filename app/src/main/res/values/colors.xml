@@ -12,5 +12,7 @@
     <color name="backgroundColor">#313131</color>
     <color name="mainColor">#a7efaf</color>
 
+    <color name="transparent">#D0000000</color>
+
     <color name="col_button_background_color">#a7efaf</color>
 </resources>

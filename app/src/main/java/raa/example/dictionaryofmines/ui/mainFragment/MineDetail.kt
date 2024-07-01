@@ -431,8 +431,11 @@ class MineDetail : Fragment() {
     private fun showFullScreenImage(fileName: String) {
         val bitmap = getBitmapFromAssets(fileName)
         if (bitmap != null) {
-            val dialog = Dialog(requireContext(), android.R.style.Theme_Black_NoTitleBar_Fullscreen)
-            dialog.setContentView(R.layout.dialog_fullscreen_image)
+            val dialog = Dialog(requireContext(), android.R.style.Theme_Black_NoTitleBar_Fullscreen).apply {
+                window?.setBackgroundDrawableResource(R.color.transparent)
+                setContentView(R.layout.dialog_fullscreen_image)
+            }
+
             val imageView: ZoomImageView = dialog.findViewById(R.id.imageView)
             imageView.setImageBitmap(bitmap)
             dialog.show()

@@ -1,7 +1,9 @@
 package raa.example.dictionaryofmines.ui
 
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import raa.example.dictionaryofmines.R
 import raa.example.dictionaryofmines.databinding.ActivityMainBinding
@@ -12,6 +14,8 @@ class MainActivity : AppCompatActivity() {
 
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +29,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         bindBottomNavBar()
+
+        sharedPreferences = this.getSharedPreferences("AppSettings", 0)
+        val isDarkModeEnabled = sharedPreferences.getBoolean("DarkMode", false)
+
+        if (isDarkModeEnabled) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
     }
 
     private fun bindBottomNavBar() {
