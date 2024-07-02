@@ -66,7 +66,7 @@ object Repository {
         return MineClass.returnEmpty()
     }
 
-    fun getNamesOfCards(context: Context): List<String>{
+    fun getNamesOfCards(context: Context, param: String): List<String>{
         val csvParser = CSVParser(
             getFile(context).reader(), CSVFormat.DEFAULT
                 .withFirstRecordAsHeader()
@@ -81,8 +81,14 @@ object Repository {
 
         for (line in csvParser){
             name = line.get(1)
-            if(name.isNotBlank())
-                listOfNames.add(name)
+            if(name.isNotBlank()){
+                if(param == line.get(0))
+                    listOfNames.add(name)
+                else if(param == "none"){
+                    listOfNames.add(name)
+                }
+            }
+
         }
 
         return listOfNames.toList()

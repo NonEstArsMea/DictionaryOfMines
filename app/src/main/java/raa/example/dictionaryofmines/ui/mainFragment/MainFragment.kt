@@ -32,6 +32,8 @@ class MainFragment : Fragment() {
 
     private val mainParamAdapter = RecycleViewAdapter()
 
+    private var mineList : List<MineDataClass> = emptyList()
+
     private val viewModel: MainFragmentViewModel by viewModels()
 
     override fun onCreateView(
@@ -55,22 +57,14 @@ class MainFragment : Fragment() {
         filterIcon.setOnClickListener {
             if (filterLayout.visibility == View.GONE) {
                 expand(filterLayout)
-                filterIcon.icon = requireContext().getDrawable(R.drawable.arrow_up) // Меняем иконку на стрелку вверх
+                filterIcon.icon = requireContext().getDrawable(R.drawable.arrow_up) // иконку на стрелку вверх
             } else {
                 collapse(filterLayout)
-                filterIcon.icon = requireContext().getDrawable(R.drawable.arrow_down) // Меняем иконку на стрелку вниз
+                filterIcon.icon = requireContext().getDrawable(R.drawable.arrow_down) // иконку на стрелку вниз
             }
         }
 
-        var names = Repository.getNamesOfCards(requireContext())
 
-        val mineList = buildList {
-            repeat(names.size) {
-                this.add(MineDataClass(it, names[it]))
-            }
-        }
-
-        mainParamAdapter.submitList(mineList)
 
         binding.searchVeiw.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?) = false
@@ -85,6 +79,17 @@ class MainFragment : Fragment() {
             }
         })
 
+        binding.filterOptionsGroup.setOnCheckedChangeListener { group, checkedId ->
+            val filteredItems = when (checkedId) {
+                R.id.filter_option_none -> setList("none")
+                R.id.filter_option_anti_personnel -> setList("protivpexot")
+                R.id.filter_option_anti_tank -> setList("protivtank")
+                else -> setList("none")
+            }
+            mainParamAdapter.submitList(filteredItems)
+        }
+
+        binding.filterOptionNone.isChecked = true
 
         mainParamAdapter.onClickListener = {
             requireActivity().supportFragmentManager.beginTransaction()
@@ -138,5 +143,16 @@ class MainFragment : Fragment() {
 
         animation.duration = (initialHeight / view.context.resources.displayMetrics.density).toLong()
         view.startAnimation(animation)
+    }
+
+    private fun setList(param : String): List<MineDataClass> {
+        val names = Repository.getNamesOfCards(requireContext(), param)
+
+        mineList = buildList {
+            repeat(names.size) {
+                this.add(MineDataClass(it, names[it]))
+            }
+        }
+        return mineList
     }
 }

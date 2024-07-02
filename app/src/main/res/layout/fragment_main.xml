@@ -66,21 +66,32 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/backgroundColor"
             android:orientation="vertical"
             android:padding="15dp">
-            <!-- Здесь будут ваши фильтры -->
-            <CheckBox
-                android:id="@+id/filter_option_1"
+            <RadioGroup
+                android:id="@+id/filter_options_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Option 1" />
+                android:orientation="vertical">
 
-            <CheckBox
-                android:id="@+id/filter_option_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Option 2" />
+                <RadioButton
+                    android:id="@+id/filter_option_none"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="None" />
+
+                <RadioButton
+                    android:id="@+id/filter_option_anti_personnel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Противопехотные" />
+
+                <RadioButton
+                    android:id="@+id/filter_option_anti_tank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Противотанковые" />
+            </RadioGroup>
 
             <!-- Добавьте здесь больше элементов для фильтров по необходимости -->
         </LinearLayout>
